@@ -17,3 +17,8 @@ model Room {
   name  String? @unique
   capacity Int
 } 
+
+model Role {
+  id Int @id @default(autoincrement())
+  libelle String
+}
