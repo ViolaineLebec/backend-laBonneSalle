@@ -1,31 +1,31 @@
 import roomRepository from "../repositories/room.repository.ts";
 
-// const getById = async (id: string) => {
-//     const room = await roomRepository.getById(id);
-//     if (!room) {
-//         throw new Error("Room not found");
-//     }
-//     return room;
-// };
+const getById = async (id: number) => {
+    const room = await roomRepository.getById(id);
+    if (!room) {
+        throw new Error("Room not found");
+    }
+    return room;
+};
 
 const getAll = async () => {
     return await roomRepository.getAll();
 };
 
-const create = async (room: {name: string, capacity: number}) => {
-   return await roomRepository.create(room);
+const create = async (room: { name: string, capacity: number }) => {
+    return await roomRepository.create(room);
 }
 
-const update = async (name: string, data: {name?:string, capacity?:number}) => {
-    return await roomRepository.update({where:{name}, data});
+const update = async (id: number, data: { name?: string, capacity: number }) => {
+    return await roomRepository.update(id, data);
 }
 
-const suppr = async (name: string) => {
-    return await roomRepository.suppr({where:{name}});
+const suppr = async (id: number) => {
+    return await roomRepository.suppr(id);
 }
 
 export default {
-    // getById,
+    getById,
     getAll,
     create,
     update,

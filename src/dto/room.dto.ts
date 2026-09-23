@@ -3,7 +3,4 @@ export interface createRoomDTO {
     capacity: number;
 }
 
-export interface roomDTO {
-    name: string;
-    capacity: number;
-}
+export interface roomDTO { id: number, name: string | null, capacity: number | null }
