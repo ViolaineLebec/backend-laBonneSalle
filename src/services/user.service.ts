@@ -13,6 +13,7 @@ const getAll = async () => {
 };
 
 const create = async (user: { lastname: string, firstname: string, email: string, password: string }) => {
+
     return await userRepository.create(user);
 }
 
